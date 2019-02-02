@@ -5,7 +5,7 @@ function getRepositories() {
   req.send();
 }
 
-function showRepositories() {
+function displayRepositories() {
   var repos = JSON.parse(this.responseText);
   const repoList = `<ul>${repos
     .map(
