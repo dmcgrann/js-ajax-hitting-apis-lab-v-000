@@ -6,15 +6,8 @@ function getRepositories() {
 }
 
 function displayRepositories() {
-  var users = JSON.parse(this.responseText);
-  const userList = `<ul>${users
-    .map(
-      u =>
-        '<li>' +
-        u.author.login +
-        '</li>'
-    )
-    .join('')}</ul>`;
+  const repos = JSON.parse(this.responseText);
+  const repoList = `<ul>${repos.map(repo => '<li><a href="' + repo.html_url + '">' + repo.name + '</a> - <a id="' + repo.name + '"href="#" data-username="' + repo.owner.login + '" data-repository="' + repo.name + '" onclick="getCommits(this);">Get Commits</a> | <a href="#" onclick="getBranches(this);" data-username="' + repo.owner.login + '" data-repository="' + repo.name + '">Get Branches</a></li>').join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
 }
 
