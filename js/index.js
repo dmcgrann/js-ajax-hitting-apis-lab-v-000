@@ -25,7 +25,7 @@ function getCommits(el) {
   const repo = el.dataset.repository;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  req.open('GET', 'https://api.github.com/repos/octocat/' + name + '/commits');
+  req.open('GET', `https://api.github.com/repos/${name}/${repo}/commits`);
   req.send();
 }
 
