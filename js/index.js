@@ -34,7 +34,7 @@ function displayCommits() {
     .map(
       detail =>
         '<li><strong>' +
-        detail.username.login +
+        detail.username.name +
         '</strong> - ' +
         detail.commit.message +
         '</li>'
