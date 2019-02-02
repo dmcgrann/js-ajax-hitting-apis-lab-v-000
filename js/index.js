@@ -7,11 +7,11 @@ function getRepositories() {
 
 function displayRepositories() {
   var users = JSON.parse(this.responseText);
-  const repoList = `<ul>${users
+  const userList = `<ul>${users
     .map(
       u =>
         '<li>' +
-        u.name +
+        u.author.login +
         '</li>'
     )
     .join('')}</ul>`;
