@@ -29,16 +29,7 @@ function getCommits(el) {
 }
 
 function displayCommits() {
-  const details = JSON.parse(this.responseText);
-  const detailsList = `<ul>${details
-    .map(
-      detail =>
-        '<li>' +
-        detail.commit.author + detail.author.login +
-        ' - ' +
-        detail.commit.message +
-        '</li>'
-    )
-    .join('')}</ul>`;
-  document.getElementById('details').innerHTML = detailsList;
+  let commits = JSON.parse(this.responseText);
+  const commitsList = `<ul>${commits.map(c => '<li>' + c.commit.author.name + ' | ' + c.author.login + ' | ' + c.commit.message + '</li>').join('')}</ul>`;
+  document.getElementById('details').innerHTML = commisList;
 }
