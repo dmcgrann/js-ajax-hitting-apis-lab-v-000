@@ -37,6 +37,6 @@ function getBranches(el) {
 
 function displayBranches() {
   let branches = JSON.parse(this.responseText);
-  const branchesList = `<ul>${branches.map(b => '<li>' + b.branch + '</li>').join('')}</ul>`;
+  const branchesList = `<ul>${branches.map(b => '<li>' + b.branches_url + '</li>').join('')}</ul>`;
   document.getElementById('details').innerHTML = branchesList;
 }
