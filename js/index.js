@@ -11,9 +11,9 @@ function showRepositories() {
     .map(
       r =>
         '<li>' +
-        r.usernname +
+        r.name +
         ' - <a href="#" data-repo="' +
-        r.username +
+        r.name +
         '" onclick="getCommits(this)">Get Commits</a></li>'
     )
     .join('')}</ul>`;
